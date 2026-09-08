@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homelab-status
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homelab-status
+  template:
+    metadata:
+      labels:
+        app: homelab-status
+    spec:
+      serviceAccountName: homelab-status
+      nodeSelector:
+        kubernetes.io/hostname: pi-control
+      containers:
+        - name: homelab-status
+          image: ghcr.io/malin502/homelab-status:latest
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: homelab-status
+  namespace: default
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: homelab-status.home.arpa
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: homelab-status
+                port:
+                  number: 80
