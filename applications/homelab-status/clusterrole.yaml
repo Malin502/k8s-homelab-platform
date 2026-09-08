@@ -4,5 +4,5 @@ metadata:
   name: homelab-status
 rules:
   - apiGroups: [""]
-    resources: ["nodes"]
+    resources: ["nodes", "pods"]
     verbs: ["get", "list"]
