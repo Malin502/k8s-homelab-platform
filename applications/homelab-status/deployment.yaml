@@ -18,6 +18,6 @@ spec:
         kubernetes.io/hostname: pi-control
       containers:
         - name: homelab-status
-          image: ghcr.io/malin502/homelab-status:sha-2bf4cd58486b638ebd983e22519ee5752d98d585
+          image: ghcr.io/malin502/homelab-status:sha-540a8b4cf1de60ebc4172b4d177ad3b1dad961d1
           ports:
             - containerPort: 8080
